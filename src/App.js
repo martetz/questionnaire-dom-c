@@ -20,7 +20,7 @@ export default class App extends Component{
     }
 
     initAllQuations(q){
-       const cardsList = q.map(card => (<Card key={'key-'+ card.id} text={card.quation}/>))
+       const cardsList = q.map(card => (<Card key={'key-'+ card.id} card={card}/>))
            return (
             <>
                 {cardsList}

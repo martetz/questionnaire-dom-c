@@ -1,8 +1,7 @@
 # dependencies
 /node_modules
 /package-lock.json
-/public
-/src
+
 
 
 /api/node_modules
