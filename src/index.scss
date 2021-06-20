@@ -13,6 +13,10 @@ code {
 }
 
 
+@import './elements/quastion.scss';
+@import './elements/radio.scss';
+@import './elements/checkbox.scss';
+
 
 .container{
   width: 100%;
@@ -21,88 +25,6 @@ code {
   flex-direction: column;
   align-items: center;
   background: linear-gradient(163deg, rgba(255,94,114,0.2) 10%, rgba(0,212,255,0.2) 60%);
-}
-
-
-.quation{
-  margin-top: 10vw;
-  /* border: 1px solid black; */
-  min-width: 50%;
-  background-color: white;
-  border-radius: 1vw;
-  padding: 2vw;
-  box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.87);
-}
-
-.quation__disc{
-  color: rgb(177, 175, 175);
-  /* border: 1px solid red; */
-}
-
-/* .quation__text{
-  border: 1px solid blue;
-} */
-
-
-.quation__answers{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.quation__button{
-  display: flex;
-  justify-content: flex-end;
-  /* border: 1px solid green; */
-  /* padding: 1vw 0 1vw 0; */
-}
-
-
-
-.radio{
-  padding: 5px 0 10px 5px;
-  position: relative;
-  /* border: 0.5px solid green; */
-}
-
-
-.radio lebel{
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-}
-
-.radio label:hover{
-  cursor: pointer;
-}
-
-input[type=radio] {
-    opacity: 0;
-}
-
-input[type=radio]:checked + label:before {
-  background-color: rgba(255,94,114,1);
-}
-
-input[type=radio]:hover + label:before {
-  cursor: pointer;
-  border: 3px solid rgba(0,212,255,0.5);
-}
-  
-
-.radio label:before {
-  border: 3px solid rgba(0,212,255,1);
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  left: 0;
-  margin-top: 4px;
-  /* bottom: 0.001vw; */
-  /* background-color: rgb(155, 110, 110); */
-  /* box-shadow: inset 0px 2px 3px 0px rgba(179, 150, 150, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, .8); */
-  border-radius: 50%;
 }
   
 

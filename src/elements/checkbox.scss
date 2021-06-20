@@ -1,0 +1,37 @@
+.checkbox{
+    padding: 5px 0 10px 5px;
+    position: relative;
+    lebel {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+    }
+}
+
+input[type=checkbox] {
+    opacity: 0;
+    &:checked + label:before{
+        background-image: url(../bird.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &:hover + label:before{
+        cursor: pointer;
+        border: 3px solid rgba(0,212,255,0.5);
+    }
+}
+
+.checkbox label:hover{
+    cursor: pointer;
+}
+  
+.checkbox label:before {
+    border: 3px solid rgba(0,212,255,1);
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    margin-top: 4px;
+}
