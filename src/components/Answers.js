@@ -2,6 +2,8 @@ import {Component} from 'react';
 import RadioBoolean from './RadioBoolean';
 import Shuffle from './Shuffle';
 import Radio from './Radio';
+import Checkbox from './Checkbox';
+
 
 export default class Answers extends Component{
 
@@ -21,9 +23,8 @@ export default class Answers extends Component{
         answers.push(val);
       })
       answers.push(card.correct);
-      let result = Shuffle(answers);
-      console.log('key-' + Math.floor(Math.random()*100000));
-      let allAnswers = result.map(res => (<Radio key={'key-' + Math.floor(Math.random()*100000)} answerText = {res} id = {'radio-' + Math.floor(Math.random()*100000)}/>))
+      let resoult = Shuffle(answers);
+      let allAnswers = resoult.map(res => (<Radio key={'key-middle-' + Math.floor(Math.random()*100000)} answerText = {res} id = {'radio-' + Math.floor(Math.random()*100000)}/>))
       return (
         <>
         {allAnswers}
@@ -32,7 +33,26 @@ export default class Answers extends Component{
     }
 
     if(card.difficulty === 'hard'){
-      console.log('Это сложный вопрос');
+      let answers = [];
+      if(card.incorrect !== []){
+        card.incorrect.forEach(val => {
+          answers.push(val)
+        })
+      }
+
+      if(card.correct !== []){
+        card.correct.forEach(val => {
+          answers.push(val)
+        })
+      }
+
+      let resoult = Shuffle(answers);
+      let allAnswers = resoult.map(res => (<Checkbox key={'key-hard-' + Math.floor(Math.random()*100000)} id={'checkbox-' + Math.floor(Math.random()*100000)} answerText = {res}/>));
+      return (
+        <>
+        {allAnswers}
+        </>
+      )
     }
 
   }
