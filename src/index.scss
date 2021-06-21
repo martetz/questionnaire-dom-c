@@ -19,6 +19,7 @@ code {
 
 
 .container{
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -39,7 +40,9 @@ code {
   font-family: Arial;
   font-weight: 500;
   font-size: 15px;
+  transition: opacity 0.5s linear;
 }
+
 
 .quation__button button:hover{
   cursor: pointer;
@@ -47,4 +50,14 @@ code {
   color: rgba(0,212,255,1);
   transition: border 1s linear;
   transition: color 0.2s linear;
+}
+
+
+.final{
+  top: 0;
+  left: 5%;
+  position: absolute;
+  width: 90vw;
+  height: 50vh;
+  background-color: aqua;
 }

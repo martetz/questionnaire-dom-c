@@ -11,8 +11,8 @@ const quations = [
         type: 'boolean',
         difficulty: 'easy',
         quation: 'Доля Сбера в компании ДомКлик составляет 85%',
-        correct: false,
-        incorrect: true, 
+        correct: 'false',
+        incorrect: 'true', 
         cost: 5,
     },
 
@@ -21,8 +21,8 @@ const quations = [
         type: 'boolean',
         difficulty: 'easy',
         quation: 'У сервиса ДомКлик есть приложения для IOS и Android',
-        correct: true,
-        incorrect: false,
+        correct: 'true',
+        incorrect: 'false',
         cost: 5,
     },
 
@@ -31,8 +31,8 @@ const quations = [
         type: 'boolean',
         difficulty: 'easy',
         quation: 'ДомКлик входит в топ-3 среди российских площадок недвижимости',
-        correct: true,
-        incorrect: false,
+        correct: 'true',
+        incorrect: 'false',
         cost: 5,
     },
 
