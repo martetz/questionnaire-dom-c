@@ -16,58 +16,22 @@ code {
 @import './elements/quastion.scss';
 @import './elements/radio.scss';
 @import './elements/checkbox.scss';
+@import './elements/button.scss';
+@import './elements/final.scss';
+@import './elements/resoult.scss';
 
 
 .container{
   position: relative;
+  box-sizing: border-box;
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(163deg, rgba(255,94,114,0.2) 10%, rgba(0,212,255,0.2) 60%);
+  background-attachment: fixed;
 }
   
 
-.quation__button button{
-  border: 2px solid rgba(255,94,114,1);
-  color: rgba(255,94,114,1);
-  /* border-color: ; */
-  /* background-color: rgba(255,94,114,0.5); */
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-  font-family: Arial;
-  font-weight: 500;
-  font-size: 15px;
-  transition: opacity 0.5s linear;
-}
 
-.quation__button button:disabled{
-  color: gray;
-  border-color: gray;
-  &:hover{
-    color: gray;
-    border-color: gray;
-    cursor: not-allowed;
-  }
-}
-
-
-.quation__button button:hover{
-  cursor: pointer;
-  border: 2px solid rgba(0,212,255,1);
-  color: rgba(0,212,255,1);
-  transition: border 1s linear;
-  transition: color 0.2s linear;
-}
-
-
-.final{
-  top: 0;
-  left: 5%;
-  position: absolute;
-  width: 90vw;
-  height: 50vh;
-  background-color: aqua;
-}

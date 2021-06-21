@@ -1,0 +1,39 @@
+.resoult{
+    background-color: white;
+    padding: 20px;
+    border-radius: 1vw;
+    box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.87);
+    display: grid;
+    margin-bottom: 40px;
+    grid-template-columns: 1fr 10fr;
+    width: 80%;
+    box-sizing: border-box;
+
+
+    &__number{
+        // background-color: aqua;
+        display: flex;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    &__correct{
+        // background-color: blueviolet;
+        grid-column-start: span 2;
+        padding:20px 0 20px 0;
+        font-size: 17px;
+        color: gray;
+    }
+
+    &__icon{
+        // background-image: url('../err.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        // font-size: 15px;
+        // padding-left: 60px;
+        // display: flex;
+        // align-items: center;
+        // color: gray;
+    }
+    
+}

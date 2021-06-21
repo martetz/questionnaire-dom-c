@@ -1,7 +1,6 @@
 import {Component} from 'react';
 import Card from './components/Card';
 import Final from './components/Final';
-import finalFoo from './components/finalFoo';
 
 const url = 'http://localhost:3001/api/quations';
 
@@ -12,7 +11,7 @@ export default class App extends Component{
             data: false,
             finalData: null,
             counter: 0,
-            display: 'none',
+            display: 'flex',
         }
 
         this.clickHandler = this.clickHandler.bind(this);    
@@ -34,7 +33,7 @@ export default class App extends Component{
         })
 
         this.setState({
-            display: 'block'
+            display: 'flex'
         })
     }
 
@@ -60,14 +59,22 @@ export default class App extends Component{
         if(!this.state.data){
             return (<div className='container'><h1>Что вы знаете о ДомКлик?</h1></div>)
         } else {
-            let q = this.state.data;
-            return (
-                <div className='container'>
-                    <h1>Что вы знаете о ДомКлик?</h1>
-                    {this.initAllQuations(q)}
-                    <Final display={this.state.display} data={this.state.finalData}/>
-                </div>
-            )
+            if(!this.state.finalData){
+                let q = this.state.data;
+                return (
+                    <div className='container'>
+                        <h1>Что вы знаете о ДомКлик?</h1>
+                        {this.initAllQuations(q)}
+                    </div>
+                )
+            } else {
+                return (
+                    <div className='container'>
+                        <Final display={this.state.display} 
+                            finalData={this.state.finalData} apiData={this.state.data}/>
+                    </div>
+                )
+            }         
         }
     }
 }

@@ -1,0 +1,30 @@
+button{
+  border: 2px solid rgba(255,94,114,1);
+  color: rgba(255,94,114,1);
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: Arial;
+  font-weight: 500;
+  font-size: 15px;
+  transition: opacity 0.5s linear;
+  &:hover{
+    cursor: pointer;
+    border: 2px solid rgba(0,212,255,1);
+    color: rgba(0,212,255,1);
+    transition: border 1s linear;
+    transition: color 0.2s linear;
+  }
+}
+  
+button:disabled{
+  color: gray;
+  border-color: gray;
+  transition: border 1s linear;
+  transition: color 0.2s linear;
+  &:hover{
+    color: gray;
+    border-color: gray;
+    cursor: not-allowed;
+  }
+}
