@@ -1,6 +1,6 @@
 import {Component} from 'react';
-import Err from '../err.svg';
-import Right from '../right.svg';
+import Err from '../img/err.svg';
+import Right from '../img/right.svg';
 
 let img;
 

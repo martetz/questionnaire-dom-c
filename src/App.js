@@ -12,6 +12,7 @@ export default class App extends Component{
             finalData: null,
             counter: 0,
             display: 'flex',
+            warning: '. . . . . . . . .',
         }
 
         this.clickHandler = this.clickHandler.bind(this);    
@@ -19,13 +20,24 @@ export default class App extends Component{
     }
 
     async componentDidMount(){
-        const res = await fetch(url);
-        const data = await res.json();
-        this.setState({
-            data,
-        })    
-    }
+        const res = await fetch(url).catch((err) => {return err});
+        let status, text;
 
+        res.status ? status = res.status : status = res;
+        res.statusText ? text = res.statusText : text = '';
+
+        if(status !== 200){
+            this.setState({
+                warning: `Ошибка: ${status} ${text}`
+            })
+
+        } else {
+            let data = await res.json();
+            this.setState({
+                data,
+            })
+        }
+    }
 
     finalScreenFunc(results){
         this.setState({
@@ -57,7 +69,12 @@ export default class App extends Component{
 
     render(){
         if(!this.state.data){
-            return (<div className='container'><h1>Что вы знаете о ДомКлик?</h1></div>)
+            return (
+                <div className='container'>
+                    <h1>Что вы знаете о ДомКлик?</h1>
+                    <div className='warning'>{this.state.warning}</div>
+                </div>
+            )
         } else {
             if(!this.state.finalData){
                 let q = this.state.data;
