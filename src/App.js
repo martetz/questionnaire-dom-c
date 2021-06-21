@@ -1,35 +1,42 @@
 import {Component} from 'react';
 import Card from './components/Card';
+import Final from './components/Final';
+import finalFoo from './components/finalFoo';
 
 const url = 'http://localhost:3001/api/quations';
-
 
 export default class App extends Component{
     constructor(props){
         super(props);
         this.state = {
-            data: false
+            data: false,
+            finalData: null,
+            counter: 0,
+            display: 'none',
         }
+
         this.clickHandler = this.clickHandler.bind(this);    
-        this.finalScreenHandler = this.finalScreenHandler.bind(this);
+        this.finalScreenFunc = this.finalScreenFunc.bind(this);
     }
+
     async componentDidMount(){
         const res = await fetch(url);
         const data = await res.json();
         this.setState({
             data,
-            counter: 0,
-            display: 'none'
         })    
     }
 
 
-    finalScreenHandler(){
+    finalScreenFunc(results){
+        this.setState({
+            finalData: results
+        })
+
         this.setState({
             display: 'block'
         })
     }
-
 
     clickHandler(){
         this.setState({
@@ -37,12 +44,12 @@ export default class App extends Component{
         })
         
     }
-
+  
     initAllQuations(q){
-       const cardsList = q.map(card => (<Card key={'key-'+ card.id} 
-       id = {'card-'+ card.id} card={card} data={q} click={this.clickHandler} final={this.finalScreenHandler}/>))
+       const cardsList = q.map(card => (<Card key={'key-' + card.id} 
+       card={card} nextQuation={this.clickHandler} final={this.finalScreenFunc} data={q} />))
 
-           return (
+       return (
             <>
                 {cardsList[this.state.counter]}
             </>
@@ -55,18 +62,12 @@ export default class App extends Component{
         } else {
             let q = this.state.data;
             return (
-                <>
                 <div className='container'>
                     <h1>Что вы знаете о ДомКлик?</h1>
                     {this.initAllQuations(q)}
+                    <Final display={this.state.display} data={this.state.finalData}/>
                 </div>
-
-                <div className='final' style={{display: this.state.display}}><
-                    h1>Финальные рузультаты!</h1>                
-                </div>
-                </>
             )
         }
-     
     }
 }

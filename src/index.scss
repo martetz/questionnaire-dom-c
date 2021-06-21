@@ -43,6 +43,16 @@ code {
   transition: opacity 0.5s linear;
 }
 
+.quation__button button:disabled{
+  color: gray;
+  border-color: gray;
+  &:hover{
+    color: gray;
+    border-color: gray;
+    cursor: not-allowed;
+  }
+}
+
 
 .quation__button button:hover{
   cursor: pointer;

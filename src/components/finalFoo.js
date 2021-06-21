@@ -24,8 +24,8 @@ export default function finalFoo(arrayOfAnswers, data, final){
             })
         }
     }
-    console.log(finalResoults);
-    final();
+    final(finalResoults);
+    
 }
 
 

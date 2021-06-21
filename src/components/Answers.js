@@ -4,14 +4,14 @@ import toFormAnswers from './toFormAnswers';
 
 export default class Answers extends Component{
 
-  initAnswers(card, foo){
-    return toFormAnswers(card, foo);
+  initAnswers(card, changeHandler){
+    return toFormAnswers(card, changeHandler);
   }
 
     render(){
         return (
             <form className="quation__answers">
-              {this.initAnswers(this.props.card, this.props.changeHandler)}
+              {this.initAnswers(this.props.card, this.props.onChange)}
             </form>
         )
     }
