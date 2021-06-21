@@ -11,14 +11,12 @@
 
 
     &__number{
-        // background-color: aqua;
         display: flex;
         font-size: 30px;
         font-weight: 500;
     }
 
     &__correct{
-        // background-color: blueviolet;
         grid-column-start: span 2;
         padding:20px 0 20px 0;
         font-size: 17px;
@@ -26,14 +24,8 @@
     }
 
     &__icon{
-        // background-image: url('../err.svg');
         background-repeat: no-repeat;
         background-size: contain;
-        // font-size: 15px;
-        // padding-left: 60px;
-        // display: flex;
-        // align-items: center;
-        // color: gray;
     }
     
 }

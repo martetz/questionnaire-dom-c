@@ -7,10 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 
 @import './elements/quastion.scss';
@@ -19,6 +15,7 @@ code {
 @import './elements/button.scss';
 @import './elements/final.scss';
 @import './elements/resoult.scss';
+@import './elements/points.scss';
 
 
 .container{

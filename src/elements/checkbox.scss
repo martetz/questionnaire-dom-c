@@ -12,7 +12,7 @@ input[type=checkbox] {
     opacity: 0;
     &:checked + label:before{
         background-color: pink;
-        background-image: url(../bird.svg);
+        background-image: url(../img/bird.svg);
         background-repeat: no-repeat;
         background-size: cover;
     }
