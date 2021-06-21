@@ -1,3 +1,4 @@
+import isEqual from './isEqual';
 let finalResoults = [];
 
 export default function finalFoo(arrayOfAnswers, data, final){
@@ -30,15 +31,3 @@ export default function finalFoo(arrayOfAnswers, data, final){
 
 
 
-function isEqual (a, b) {
-    let equal = [];
-    a.forEach((el)=>{
-       let res = b.filter((string) =>{
-           return string === el
-       })[0];
-
-       res ? equal.push(true) : equal.push(false);
-
-    })
-    return !equal.includes(false); 
-}
