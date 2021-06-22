@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import Card from './components/Card';
 import Final from './components/Final';
+import Loader from './components/Loader';
 
 const url = 'http://localhost:3001/api/quations';
 
@@ -12,7 +13,8 @@ export default class App extends Component{
             finalData: null,
             counter: 0,
             display: 'flex',
-            warning: '. . . . . . . . .',
+            warning: Loader(),
+            warningContainer: 'none',
         }
 
         this.clickHandler = this.clickHandler.bind(this);    
@@ -20,23 +22,23 @@ export default class App extends Component{
     }
 
     async componentDidMount(){
-        const res = await fetch(url).catch((err) => {return err});
-        let status, text;
+        let res = await fetch(url)
+                    .then((res => res.json()))
+                        .then((data) => {return data})
+                    .catch((err) => {return 'Ошибка: ' + err});
+        
 
-        res.status ? status = res.status : status = res;
-        res.statusText ? text = res.statusText : text = '';
-
-        if(status !== 200){
-            this.setState({
-                warning: `Ошибка: ${status} ${text}`
-            })
-
-        } else {
-            let data = await res.json();
+        if(typeof res !== 'string'){
+            let data = await res;
             this.setState({
                 data,
             })
-        }
+        } else {
+            this.setState({
+                warning: res,
+                warningContainer: 'rgba(255, 255, 255, 0.6)'
+            })
+        }     
     }
 
     finalScreenFunc(results){
@@ -72,7 +74,7 @@ export default class App extends Component{
             return (
                 <div className='container'>
                     <h1>Что вы знаете о ДомКлик?</h1>
-                    <div className='warning'>{this.state.warning}</div>
+                    <div style={{background: this.state.warningContainer, boxShadow: this.state.warningContainer}} className='warning'>{this.state.warning}</div>
                 </div>
             )
         } else {
