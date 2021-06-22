@@ -28,7 +28,6 @@ export default function toFormAnswers (card, changeHandler) {
       </>
     )
   }
-
     
   if(card.difficulty === 'hard'){
     let answers = [];
