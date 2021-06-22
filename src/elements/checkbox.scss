@@ -36,3 +36,13 @@ input[type=checkbox] {
     left: 0;
     margin-top: 4px;
 }
+
+@media (min-width: 1540px) {
+    .checkbox{
+        padding-left: 30px;
+    }
+    .checkbox label:before{
+      width: 20px;
+      height: 20px;
+    }
+  }

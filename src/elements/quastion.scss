@@ -1,10 +1,10 @@
 .quation{
-  margin-top: 10vw;
+  margin-top: 100px;
   min-width: 50%;
   max-width: 50%;
   background-color: white;
-  border-radius: 1vw;
-  padding: 2vw;
+  border-radius: 10px;
+  padding: 30px;
   box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.87);
 }
 
@@ -40,4 +40,29 @@
   color: rgba(0,212,255,1);
   transition: border 1s linear;
   transition: color 0.2s linear;
+}
+
+
+@media (min-width: 1540px) {
+  .quation{
+    font-size: 25px !important;
+    border-radius: 30px;
+  }
+}
+
+@media (min-width: 468px) and (max-width: 942px){
+  .quation{
+    border-radius: 20px;
+    max-width: 70%;
+    min-width: 70%;
+  }
+}
+
+@media (max-width: 468px){
+  .quation{
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 80%;
+    min-width: 80%;
+  }
 }

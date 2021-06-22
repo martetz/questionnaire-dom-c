@@ -35,4 +35,13 @@ input[type=radio] {
     border-radius: 50%;
 }
   
-    
+@media (min-width: 1540px) {
+    .radio{
+        padding-left: 30px;
+    }
+    .radio label:before{
+      width: 20px;
+      height: 20px;
+    }
+  }
+

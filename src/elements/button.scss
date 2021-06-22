@@ -1,9 +1,8 @@
 button{
   border: 2px solid rgba(255,94,114,1);
   color: rgba(255,94,114,1);
-  background-color: white;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 15px !important;
   font-family: Arial;
   font-weight: 500;
   font-size: 15px;
@@ -26,5 +25,13 @@ button:disabled{
     color: gray;
     border-color: gray;
     cursor: not-allowed;
+  }
+}
+
+@media (min-width: 1540px) {
+  button{
+    padding: 15px !important;
+    font-size: 25px !important;
+    border-radius: 30px !important;
   }
 }
